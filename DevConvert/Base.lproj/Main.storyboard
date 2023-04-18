@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController keyboardType="on" id="BYZ-38-t0r" customClass="ViewController" customModule="DevConvert" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="804"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="B" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="z8q-28-n7o" userLabel="TextStr">
+                                <rect key="frame" x="0.0" y="0.0" width="404" height="90"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="rhT-2K-qo3"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.80000000000000004" contentMode="scaleToFill" text="0x42" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FTc-Ok-aql" userLabel="TextHex">
+                                <rect key="frame" x="0.0" y="90" width="404" height="90"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="alphabet"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.59999999999999998" contentMode="scaleToFill" text="66" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Qp-Er-yvT" userLabel="TextDec">
+                                <rect key="frame" x="0.0" y="180" width="404" height="90"/>
+                                <color key="backgroundColor" systemColor="separatorColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numbersAndPunctuation"/>
+                            </textView>
+                        </subviews>
+                        <keyboardLayoutGuide key="keyboard" id="Kho-TB-a43"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0Qp-Er-yvT" firstAttribute="top" secondItem="FTc-Ok-aql" secondAttribute="bottom" id="0Kg-wz-d6D"/>
+                            <constraint firstItem="0Qp-Er-yvT" firstAttribute="height" secondItem="FTc-Ok-aql" secondAttribute="height" id="2VB-4h-805"/>
+                            <constraint firstItem="z8q-28-n7o" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-10" id="AOJ-Mg-bt0"/>
+                            <constraint firstItem="z8q-28-n7o" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="CMR-1x-LxE"/>
+                            <constraint firstItem="0Qp-Er-yvT" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fal-3O-KdC"/>
+                            <constraint firstItem="FTc-Ok-aql" firstAttribute="top" secondItem="z8q-28-n7o" secondAttribute="bottom" id="Fkw-67-aK2"/>
+                            <constraint firstItem="z8q-28-n7o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L43-Kb-3e2"/>
+                            <constraint firstItem="FTc-Ok-aql" firstAttribute="trailing" secondItem="z8q-28-n7o" secondAttribute="trailing" id="Mho-Xh-g6f"/>
+                            <constraint firstItem="0Qp-Er-yvT" firstAttribute="trailing" secondItem="FTc-Ok-aql" secondAttribute="trailing" id="jvO-ap-6Yj"/>
+                            <constraint firstItem="FTc-Ok-aql" firstAttribute="height" secondItem="z8q-28-n7o" secondAttribute="height" id="oSe-SB-Uqe"/>
+                            <constraint firstItem="0Qp-Er-yvT" firstAttribute="top" secondItem="FTc-Ok-aql" secondAttribute="bottom" id="uE4-oj-fkn"/>
+                            <constraint firstItem="FTc-Ok-aql" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v9s-wH-mr5"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="TextDec" destination="0Qp-Er-yvT" id="RJj-q1-X0U"/>
+                        <outlet property="TextHex" destination="FTc-Ok-aql" id="m5S-3K-SpS"/>
+                        <outlet property="TextStr" destination="z8q-28-n7o" id="cv7-wE-3mk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="53.623188405797109" y="-34.821428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="separatorColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
